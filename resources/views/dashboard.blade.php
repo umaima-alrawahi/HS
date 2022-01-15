@@ -665,7 +665,8 @@
   </body>
     </div>
     <x-footer>
+      hello nico
     </x-footer>
-  
+
 
 </x-app-layout>
