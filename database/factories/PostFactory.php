@@ -14,7 +14,12 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            //
+            //tell laravel how to create data
+            'title'=> $this->faker->words(3,true),
+            'location_name'=> $this->faker->city(), 
+            'location_url'=> $this->faker->url(),
+            'description'=> $this->faker->randomHtml(2,3),
+
         ];
     }
 }
