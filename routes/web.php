@@ -28,8 +28,8 @@ Route::get('/',App\Http\Controllers\WelcomeController::class);
 // });
 
 Route::get('test', function (){
-    return view('errors/500');
-    //abort(401);
+    //return view('errors/500');
+    abort(401);
     //throw new \Exception('Error Test'); 
 });
 
