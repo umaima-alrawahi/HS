@@ -22,8 +22,14 @@ use Illuminate\Http\Request;
 
 Route::get('/',App\Http\Controllers\WelcomeController::class);
 
+// Route::get('test', function (){
+//     abort(401);
+//     //throw new \Exception('Error Test'); 
+// });
+
 Route::get('test', function (){
-    abort(401);
+    return view('errors/500');
+    //abort(401);
     //throw new \Exception('Error Test'); 
 });
 
