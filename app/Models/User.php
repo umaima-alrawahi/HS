@@ -21,7 +21,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'orgnisation',
+        'is_admin',
+        
+
     ];
+    //we can use protected garrded for fiel not allwoed to be fiiled in
+    // protected $gaurded =[];
 
     /**
      * The attributes that should be hidden for serialization.
