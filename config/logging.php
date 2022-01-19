@@ -50,8 +50,11 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single'],
+            'channels' => ['daily', 'flare'],
             'ignore_exceptions' => false,
+        ],
+        'flare' => [
+            'driver' => 'flare',
         ],
 
         'single' => [
@@ -113,16 +116,9 @@ return [
         'emergency' => [
             'path' => storage_path('logs/laravel.log'),
         ],
-        'flare' => [
-            'driver' => 'flare',
-        ],
+       
         
-        'stack' => [
-            'driver' => 'stack',
-            'channels' => ['daily', 'flare'],
-            'ignore_exceptions' => false,
-        ],
-        
+     
     ],
 
 ];
