@@ -20,20 +20,6 @@
     </style>
     </x-slot>
 
-    <x-text>
-    </x-text>
-
-    <x-group>
-      hii
-    </x-group>
- 
-  
-
-   
- 
-    <x-footer>
-      hello nico
-    </x-footer>
 
 
 

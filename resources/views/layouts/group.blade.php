@@ -1,5 +1,4 @@
-<div class="antialiased" style="font-family: Source Sans Pro, sans-serif;">
-  <div class="container mx-auto flex flex-wrap pt-4 pb-12">
+
     <div class="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
       
       <div class="flex-1 bg-white rounded-t rounded-b-none overflow-hidden shadow">
@@ -18,7 +17,4 @@
       </div>
       
     </div>
-
-  </div>
-</div>  
 
