@@ -20,13 +20,13 @@
     </style>
     </x-slot>
 
+    <x-text>
+    </x-text>
+
     <x-group>
       hii
     </x-group>
-    <x-group>
-    </x-group>
-    <x-group>
-    </x-group>
+ 
   
 
    
