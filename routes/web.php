@@ -32,6 +32,8 @@ Route::get('test', function (){
     abort(500);
     //throw new \Exception('Error Test'); 
 });
+//resource will create all routs in PostController
+Route::resource('posts', \App\Http\Controllers\PostController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
