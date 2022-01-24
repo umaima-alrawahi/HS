@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -14,6 +17,8 @@ class PostController extends Controller
      */
     public function index()
     {
+        $posts = Post::All();
+        return view('posts.index', compact('posts'));
         //
     }
 
@@ -36,6 +41,22 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+        
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            
+        ]);
+
+        //'group_name' => 'required'
+        $post = new Post();
+        $post->user_id=Auth::id();
+        $post->title=$request->input('title');
+        $post->description=$request->input('description');
+        $post->group_name=$request->input('group_name');
+        $post->save();
+        $posts = Post::All();
+        return view('posts.index', compact('posts'));
         //
     }
 

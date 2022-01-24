@@ -10,5 +10,8 @@ class Post extends Model
 {
     use HasFactory;
     use SoftDeletes;
+    public function Group(){
+        return $this->belongsTo(Group::class); 
+    }
 
 }
