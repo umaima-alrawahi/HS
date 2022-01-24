@@ -45,6 +45,7 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'group_name' => 'required',
             
         ]);
 
