@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Text extends Component
+class Radio extends Component
 {
     const REQUIRED = '<span class="text-blue-500">*</span>';
     const DISABLED = ' disabled';
@@ -29,7 +29,9 @@ class Text extends Component
         string $value = null,
         string $type = null
     )
-    {$this->name = $name;
+    
+    {
+        $this->name = $name;
         $this->label = $label ?? ucfirst($name);
         $this->placeholder = $placeholder ?? '';
         $this->comment = $comment ?? '';
@@ -48,6 +50,6 @@ class Text extends Component
      */
     public function render()
     {
-        return view('components.forms.text');
+        return view('components.forms.radio');
     }
 }

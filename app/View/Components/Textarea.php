@@ -4,7 +4,7 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class Text extends Component
+class Textarea extends Component
 {
     const REQUIRED = '<span class="text-blue-500">*</span>';
     const DISABLED = ' disabled';
@@ -16,8 +16,10 @@ class Text extends Component
     public $id;
     public $required;
     public $disabled;
+    public $size;
     public $value;
     public $type;
+    public $rows;
     public function __construct(
         string $name,
         string $label = null,
@@ -27,9 +29,11 @@ class Text extends Component
         bool $required = false,
         bool $disabled = false,
         string $value = null,
-        string $type = null
+        string $type = null,
+        int $rows = 6
     )
-    {$this->name = $name;
+    {
+        $this->name = $name;
         $this->label = $label ?? ucfirst($name);
         $this->placeholder = $placeholder ?? '';
         $this->comment = $comment ?? '';
@@ -38,6 +42,7 @@ class Text extends Component
         $this->disabled = $disabled ? $this::DISABLED : '';
         $this->value = $value;
         $this->type = $type ?? 'text';
+        $this->rows = $rows;
         //
     }
 
@@ -48,6 +53,6 @@ class Text extends Component
      */
     public function render()
     {
-        return view('components.forms.text');
+        return view('components.forms.textarea');
     }
 }
