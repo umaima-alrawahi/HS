@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 use Illuminate\Http\Request;
 
@@ -33,7 +34,10 @@ Route::get('test', function (){
     //throw new \Exception('Error Test'); 
 });
 //resource will create all routs in PostController
-Route::resource('posts', \App\Http\Controllers\PostController::class);
+Route::resource('posts', \App\Http\Controllers\PostController::class)->Middleware('auth');
+//Route::post('/posts/store', 'App\Http\Controllers\PostController@store')->Middleware('auth');
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

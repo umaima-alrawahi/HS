@@ -75,8 +75,7 @@
     <section class="bg-white border-b py-8">
     <h1 class="w-full p-8 text-3xl font-bold text-center">Add your service to our website now </h1>
 
-          <x-text>
-          </x-text>
+    <a href="/posts/create" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Create post</a>
     </section>
       
      
