@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Group;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class GroupController extends Controller
 {
@@ -14,6 +15,8 @@ class GroupController extends Controller
      */
     public function index()
     {
+        $groups = Group::All();
+        return view('groups.index', compact('groups'));
         //
     }
 
@@ -24,6 +27,7 @@ class GroupController extends Controller
      */
     public function create()
     {
+        return view('groups.create');
         //
     }
 
@@ -35,6 +39,22 @@ class GroupController extends Controller
      */
     public function store(Request $request)
     {
+        // $request->validate([
+        //     'name' => 'required',
+        //     'description' => 'required',
+            
+        // ]);
+
+        //'group_name' => 'required'
+        $group = new Group();
+        $group->name=$request->input('name');
+        $group->description=$request->input('description');
+        $group->save();
+        $groups = Group::All();
+
+        //dd($groups);
+
+        return view('groups.index', compact('groups'));
         //
     }
 
