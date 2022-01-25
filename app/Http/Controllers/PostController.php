@@ -67,8 +67,13 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show(Request $request, $id)
     {
+        $post = Post::find($id);
+        
+       
+        
+        return view('posts.show', ["post"=>$post]);
         //
     }
 
@@ -78,8 +83,13 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit(Request $request, $id)
     {
+        $post = Post::find($id);
+        
+       
+        
+        return view('posts.edit', ["post"=>$post]);
         //
     }
 
@@ -90,9 +100,42 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
+        
+        $post = Post::find($id);
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+       
+            
+        ]);
+
+      
+        
+      
+        $post->title=$request->input('title');
+        $post->description=$request->input('description');
+      
+        $post->save();
+        $post->update();
+        $posts = Post::All();
+        
+        return view('posts.index', compact('posts'));
         //
+    }
+        //
+    public function delete(Request $request, $id)
+    {
+        $post = Post::find($id);
+        
+       
+        
+        return view('posts.delete', ["post"=>$post]);
+    
+            //
+    
+    
     }
 
     /**
@@ -101,8 +144,14 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy(Post $post, $id)
     {
+        
+        $post = Post::find($id);
+        $post->delete();
+        //return redirect('/');
+        //
+
         //
     }
 }

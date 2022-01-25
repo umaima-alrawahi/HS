@@ -57,15 +57,13 @@
       <div class="container mx-auto flex flex-wrap pt-4 pb-12">
         <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">Availble type of services </h1>
 
+
+
           <x-group>
             hii
           </x-group>
-          <x-group>
-            hii
-          </x-group>
-          <x-group>
-            hii
-          </x-group>
+
+         
           
 
       
@@ -74,8 +72,12 @@
 
     <section class="bg-white border-b py-8">
     <h1 class="w-full p-8 text-3xl font-bold text-center">Add your service to our website now </h1>
+    <a href="/posts" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">View services</a>
+    <br>
 
     <a href="/posts/create" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Create post</a>
+    <br>
+    <a href="/groups/create" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Create group</a>
     </section>
       
      
