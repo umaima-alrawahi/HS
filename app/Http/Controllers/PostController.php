@@ -127,11 +127,22 @@ class PostController extends Controller
         //
     public function delete(Request $request, $id)
     {
+        
         $post = Post::find($id);
+       
+
+        if  (Auth::id() == $post->user_id ){
+            return view('posts.delete', ["post"=>$post]);
+
+        }else{
+            return ("you are not allowed to delete another person post !!");
+        }
+            
+        
         
        
         
-        return view('posts.delete', ["post"=>$post]);
+        
     
             //
     
