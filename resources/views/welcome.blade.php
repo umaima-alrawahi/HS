@@ -60,12 +60,24 @@
 
 
           <x-group>
-            hii
+          Technology: </br>
+          Software services enhance features and upgrade the security for a company or individual's technological devices, such as computers and phones. These services provide anti-virus protection and update applications to be more user-friendly and effective.
+          </x-group>
+
+          <x-group>
+          Business: </br>
+          If a company wants to gain more business and public attention, it may consider outsourcing marketing services. Marketing services help companies advertise their products, services and brand by creating marketing campaigns. Though some companies have internal marketing departments, others outsource this labor in order to receive faster and higher-quality results.
+          </x-group>
+
+          <x-group>
+          Event: </br>
+          Companies can hire an event planning service for office parties, fundraising events and other corporate functions. The event management service is responsible for finding venues, supplies, staff and catering, if applicable.
           </x-group>
 
          
           
 
+          <a href="/groups/create" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Request a new group of services!</a>
       
         </div>
     </section>
@@ -77,7 +89,7 @@
 
     <a href="/posts/create" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Create post</a>
     <br>
-    <a href="/groups/create" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Create group</a>
+    
     </section>
       
      
