@@ -86,10 +86,17 @@ class PostController extends Controller
     public function edit(Request $request, $id)
     {
         $post = Post::find($id);
+
+        if  (Auth::id() == $post->user_id ){
+            return view('posts.edit', ["post"=>$post]);
+
+        }else{
+            return ("you are not allowed to edit another person post !!");
+        }
         
        
         
-        return view('posts.edit', ["post"=>$post]);
+        
         //
     }
 
@@ -116,6 +123,12 @@ class PostController extends Controller
       
         $post->title=$request->input('title');
         $post->description=$request->input('description');
+
+        if($request->hasFile('image')){
+            $post->addMediaFromRequest('image')->toMediaCollection('images');
+
+        }
+       
       
         $post->save();
         $post->update();
