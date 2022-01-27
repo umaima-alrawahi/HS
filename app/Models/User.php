@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Notifications\WelcomeUser;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -59,6 +60,8 @@ class User extends Authenticatable
     {
         static::created(function ($user) {
             $profile = Profile::create(['user_id' => $user->id]);
+
+            
         });
     }
 }
